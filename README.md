@@ -1,47 +1,67 @@
-# Fitness Service
+# 🏋️ Fitness Microservices Platform
 
-## 📘 Overview
+A **production-style microservices application** for tracking fitness activities and generating **AI-powered workout recommendations**, built using **Spring Boot, Spring Cloud, and React**.
 
-The **Fitness Service** is a microservices-based fitness tracking application that allows users to log physical
-activities, receive AI-based workout recommendations, and manage user data securely using **Keycloak authentication**.
+This project demonstrates real-world backend engineering concepts including **OAuth2 security**, **API Gateway**, **event-driven architecture**, and **polyglot persistence**.
 
-The system is built using **Spring Boot + Spring Cloud**, follows best practices for **API Gateway**, **service
-discovery**, and **event-driven communication**, and integrates an AI service for personalized recommendations.
+---
+
+## 🚀 Why This Project
+
+- Designed to mirror **real enterprise microservices**
+- Focus on **security, scalability, and clean architecture**
+- Uses industry-standard tools used in production systems
+- Built as a **portfolio project** to showcase backend & full-stack skills
+
+---
+
+## 🧠 Key Features
+
+- 🔐 Secure authentication using **Keycloak (OAuth2 + PKCE)**
+- 🚪 **API Gateway** with centralized routing & JWT validation
+- 🧭 Service discovery with **Netflix Eureka**
+- ⚙️ Centralized configuration via **Spring Cloud Config Server**
+- 📡 Event-driven communication using **RabbitMQ**
+- 🏃 Activity tracking (Running, Walking, Cycling)
+- 🤖 AI-powered recommendations using **Gemini API**
+- 🗄️ Polyglot persistence (**PostgreSQL + MongoDB**)
+- 🐳 Docker-based local setup
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Backend
+**Backend**
+- Java 21, Spring Boot, Spring Cloud
+- Spring Security, Spring WebFlux
+- Spring Data JPA, Spring Data MongoDB
 
-- Java 21
-- Spring Boot
-- Spring Cloud Gateway
-- Spring WebFlux
-- Spring Security
-- Spring Data JPA
-- Spring Data MongoDB
+**Frontend**
+- React, Redux Toolkit
+- Axios, Material UI
 
-### Frontend
-
-- React
-- Redux Toolkit
-- Axios
-- Material UI (MUI)
-
-### Infrastructure & DevOps
-
-- Keycloak (OAuth2 + PKCE)
-- Netflix Eureka (Service Discovery)
-- Spring Cloud Config Server
-- RabbitMQ
-- MongoDB
-- PostgreSQL
+**Infrastructure**
+- Keycloak, RabbitMQ
+- PostgreSQL, MongoDB
+- Eureka, Config Server
 - Docker
 
-### AI Integration
-
+**AI**
 - Gemini API
+
+---
+
+## 🏗️ Architecture Overview
+
+- All requests flow through **API Gateway**
+- Authentication handled by **Keycloak**
+- Services register with **Eureka**
+- Configurations loaded from **Config Server**
+- Activity events published to **RabbitMQ**
+- AI Service consumes events and generates recommendations
+
+📌 *Architecture diagram included in the repository*
+![Project flow](assets/ai-fitness-architecture.jpg)
 
 ---
 
@@ -50,13 +70,13 @@ discovery**, and **event-driven communication**, and integrates an AI service fo
 ```text
 fitness-microservice/
 │
-├── gatewayservice/        # API Gateway + Security + User Sync
-├── userservice/           # User Management (PostgreSQL)
-├── activityservice/       # Activity Tracking (MongoDB)
-├── aiservice/             # AI Recommendations (MongoDB + Gemini API)
-├── configserver/          # Centralized Configuration
-├── eureka/          # Service Discovery
-└── fitness-app-frontend/              # React Application
+├── gatewayservice/           # API Gateway & Security
+├── userservice/              # User Management (PostgreSQL)
+├── activityservice/          # Activity Tracking (MongoDB)
+├── aiservice/                # AI Recommendations
+├── configserver/             # Centralized Config
+├── eureka/                   # Service Discovery
+└── fitness-app-frontend/     # React Frontend
 ```
 
 ## 🗄️ Database Schema
@@ -193,3 +213,10 @@ This project uses:
 ### Start Frontend
 - npm install
 - npm run dev
+
+---
+## 👤 Author
+**Naina Sharma**  
+Software Engineer
+
+[LinkedIn: naina-sharma](https://www.linkedin.com/in/naina-sharma-67318a220)
